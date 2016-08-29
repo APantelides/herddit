@@ -4,16 +4,17 @@ Read Press-Relese for more info!
 
 Features:
 
-Add a soundcloud link for a song
+Add a soundcloud link for a song 
 -include title, artist, genre
 -keep track of votes, createdDate, genre
 
 View links
 -show links with a votecount
 -upvote button
--downvote button
+-downvote button (might not be necessary)
 
--organize links
+**If time allows**
+-organize links 
 --by createdDate && votecount
 --by createdDate && randomized w/ no votecount
 
