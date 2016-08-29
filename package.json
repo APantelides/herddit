@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/APantelides/herddit/issues"
   },
-  "homepage": "https://github.com/APantelides/herddit#readme"
+  "homepage": "https://github.com/APantelides/herddit#readme",
+  "dependencies": {
+    "express": "^4.14.0",
+    "nodemon": "^1.10.2"
+  }
 }
