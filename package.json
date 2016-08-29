@@ -1,0 +1,19 @@
+{
+  "name": "herddit",
+  "version": "1.0.0",
+  "description": "reddit for music lovers",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/APantelides/herddit.git"
+  },
+  "author": "apantelides",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/APantelides/herddit/issues"
+  },
+  "homepage": "https://github.com/APantelides/herddit#readme"
+}
