@@ -47,7 +47,16 @@ app.get('/data', function (req, res) {
 });
 
 app.post('/data', function (req, res) {
-
+  var link = Link.create({
+    title: req.body.title,
+    artist: req.body.artist,
+    genre: req.body.genre,
+    url: req.body.url,
+    upvotes: 0
+  }).then(function(link) {
+    console.log(link + 'added to database!');
+    res.send(link);
+  });
 });
 
 app.listen(port, function() {
