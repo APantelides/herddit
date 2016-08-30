@@ -8,6 +8,7 @@
   </head>
 
   <body>
+    <h1>Welcome to Herrdit.com</h1>
     <div id='songs'>
       <form id='addSong'>
         <span>Song Title: <input type='text' placeholder="Song Title" /></span>
@@ -25,9 +26,9 @@
     </div>
 
     <script type='text/template' id='songs-template'>
-      <span class='song'><span class='songTitle'><%= title %></span><span class='songURL'><%= URL %></span> <button class='upvote'>UpVote</button></span>
+      <span class='song'><span class='vote'>Upvotes: <%= upvotes %>  </span><span class='songTitle'><%= title %>  </span><a class='songURL'
+       href= "<%= url %>">Sound Cloud Link</a> <button class='upvote'>UpVote</button></span>
     </script>
-
 
     <script src="bower_components/jquery/dist/jquery.min.js" ></script>
     <script src="bower_components/underscore/underscore-min.js" ></script>
@@ -35,10 +36,13 @@
     <script src="bower_components/backbone/backbone-min.js" ></script>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="models/song.js"></script>
+    <script src="collections/list.js"></script>
+    <script src="views/song.js"></script>
+    <script src="views/list.js"></script>
+    <script src="client.js"></script>
 
 
-    <h1>Welcome to Herrdit.com</h1>
-    <div id='app'></div>
   </body>
 
 </html>

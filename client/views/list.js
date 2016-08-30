@@ -4,7 +4,7 @@ app.ListView = Backbone.View.extend({
   el: '#songs',
 
   initialize: function ( initialSongList ) {
-    this.collection = new app.List( initalSongList );
+    this.collection = new app.List( initialSongList );
     this.render();
   },
 

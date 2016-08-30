@@ -5,7 +5,8 @@ app.Song = Backbone.Model.extend({
     title: 'No Title',
     artist: 'Unknown',
     genre: 'Not Specified',
-    url: 'http://www.example.com/'
+    url: 'http://www.example.com/',
+    upvotes: 0
   }
 
 });
