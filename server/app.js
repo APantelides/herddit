@@ -16,11 +16,39 @@ sequelize
     console.log('Connection has been established successfully.');
   }, function (err) { 
     console.log('Unable to connect to the database:', err);
+  }); 
+
+var Link = sequelize.define('Link', {
+  title: Sequelize.STRING,
+  artist: Sequelize.STRING,
+  genre: Sequelize.STRING,
+  url: Sequelize.STRING,
+  upvotes: Sequelize.INTEGER
+}, {
+  tableName: 'SongLinks'
+});
+
+sequelize
+  .sync({ force: true })
+  .then(function(err) {
+    console.log('It worked!');
+  }, function (err) { 
+    console.log('An error occurred while creating the table:', err);
   });
 
 app.use(express.static(path.join(__dirname, '../client')));
 
 app.use(bodyParser());
+
+app.get('/data', function (req, res) {
+  Link.findAll().then( function(results) {
+    res.send(results);
+  });
+});
+
+app.post('/data', function (req, res) {
+
+});
 
 app.listen(port, function() {
   console.log('Server started! Listening on port:' + port);
