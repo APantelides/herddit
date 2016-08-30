@@ -20,18 +20,20 @@
         </div>
       </form>
     </div>
-
+    <div id='player'>
+    </div>
     <div id='search'>
       <form id='searchSongs'>
-        <span>Search: <input type='text' placeholder="Seach"></input><button id='submitSearch'>Search</button></span>
+        <span>Search: <input type='text' id='searchField' placeholder="Seach"></input><button id='submitSearch'>Search</button></span>
       </form>
     </div>
 
     <script type='text/template' id='songs-template'>
-      <span class='song'><span class='vote'>Upvotes: <%= upvotes %>  </span><span class='songTitle'><%= title %>  </span><a class='songURL'
-       href= "<%= url %>">Sound Cloud Link</a> <button id='upvote'>UpVote</button></span>
+      <span class='song'><span class='vote'>Upvotes: <%= upvotes %>  </span><span class='songTitle'><%= title %>  </span><button class='songURL'
+       href= "<%= url %>">Play Song</button> <button id='upvote'>UpVote</button></span>
     </script>
 
+    <script src="https://connect.soundcloud.com/sdk/sdk-3.1.2.js"></script>
     <script src="bower_components/jquery/dist/jquery.min.js" ></script>
     <script src="bower_components/underscore/underscore-min.js" ></script>
     <script src="bower_components/handlebars/handlebars.min.js" ></script>
@@ -43,8 +45,6 @@
     <script src="views/song.js"></script>
     <script src="views/list.js"></script>
     <script src="client.js"></script>
-
-
   </body>
 
 </html>
