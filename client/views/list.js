@@ -13,6 +13,7 @@ app.ListView = Backbone.View.extend({
     this.render();
     this.listenTo( this.collection, 'add', this.renderSong );
     this.listenTo( this.collection, 'fetch', this.render);
+    this.listenTo( this.collection, 'change', this.sort);
   },
 
   render: function () {
@@ -39,5 +40,13 @@ app.ListView = Backbone.View.extend({
       $(el).val('');
     });
     this.collection.create( formData );
+  },
+  sort: function () {
+    this.clear();
+    this.collection.sort();
+    this.render();
+  },
+  clear: function () {
+    $('.songContainer').remove();
   }
 });

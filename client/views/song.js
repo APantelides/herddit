@@ -6,7 +6,7 @@ app.SongView = Backbone.View.extend({
   template: _.template( $( '#songs-template' ).html() ),
 
   events: {
-    'click .upvote': 'upVote'
+    'click #upvote': 'upVote'
   },
 
   render: function() {
