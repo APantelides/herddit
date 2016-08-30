@@ -10,12 +10,14 @@
   <body>
     <h1>Welcome to Herrdit.com</h1>
     <div id='songs'>
-      <form id='addSong'>
-        <span>Song Title: <input type='text' placeholder="Song Title" /></span>
-        <span>Artist: <input type='text' placeholder="Artist" /></span> 
-        <span>Genre: <input type='text' placeholder="Genre" /></span> 
-        <span>SoundCloud URL: <input type='url' placeholder="SoundCloud URL" /></span>
-        <button id='submitSong'>Add Song</button>
+      <form id='addSong' action="#">
+        <div>
+          <span>Song Title: </span><input type='text' id='title' placeholder="Song Title" />
+          <span>Artist: </span><input type='text' id='artist' placeholder="Artist" />
+          <span>Genre: </span><input type='text' id='genre' placeholder="Genre" />
+          <span>SoundCloud URL: </span><input type='url' id='url'placeholder="SoundCloud URL" />
+          <button id='submitSong'>Add Song</button>
+        </div>
       </form>
     </div>
 
