@@ -17,6 +17,7 @@ app.SongView = Backbone.View.extend({
 
   upVote: function () {
     this.model.set('upvotes', this.model.get('upvotes') + 1 );
+    this.model.save();
     this.render();
   }
 });

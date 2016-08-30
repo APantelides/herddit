@@ -7,10 +7,12 @@ app.ListView = Backbone.View.extend({
     'click #submitSong': 'addSong'
   },
 
-  initialize: function ( initialSongList ) {
-    this.collection = new app.List( initialSongList );
+  initialize: function ( ) {
+    this.collection = new app.List( );
+    this.collection.fetch();
     this.render();
     this.listenTo( this.collection, 'add', this.renderSong );
+    this.listenTo( this.collection, 'fetch', this.render);
   },
 
   render: function () {
@@ -34,7 +36,8 @@ app.ListView = Backbone.View.extend({
       if ( $(el).val() !== '') {
         formData[ el.id ] = $(el).val();
       }
+      $(el).val('');
     });
-    this.collection.add(new app.Song( formData ));
+    this.collection.create( formData );
   }
 });

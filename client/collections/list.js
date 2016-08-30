@@ -1,5 +1,6 @@
 var app = app || {};
 
 app.List = Backbone.Collection.extend({
-  model: app.Song
+  model: app.Song,
+  url: '/data'
 });

@@ -29,7 +29,7 @@ var Link = sequelize.define('Link', {
 });
 
 sequelize
-  .sync({ force: true })
+  .sync()
   .then(function(err) {
     console.log('It worked!');
   }, function (err) { 
@@ -41,8 +41,11 @@ app.use(express.static(path.join(__dirname, '../client')));
 app.use(bodyParser());
 
 app.get('/data', function (req, res) {
-  Link.findAll().then( function(results) {
+  Link.findAll({
+    order: 'upvotes DESC'
+  }).then( function(results) {
     res.send(results);
+    console.log(results, 'sent to client!');
   });
 });
 
@@ -54,8 +57,23 @@ app.post('/data', function (req, res) {
     url: req.body.url,
     upvotes: 0
   }).then(function(link) {
-    console.log(link + 'added to database!');
+    // console.log(link + 'added to database!');
     res.send(link);
+  });
+});
+
+app.put('/data/:id', function (req, res) {
+  Link.findOne({
+    where: {
+      id: req.params.id
+    }
+  }).then(function(link) {
+    if (link) {
+      link.updateAttributes({
+        upvotes: req.body.upvotes
+      });
+      res.send(link);
+    }
   });
 });
 
