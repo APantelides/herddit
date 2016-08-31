@@ -4,25 +4,35 @@
   <head>
 
     <title>Herddit - Discover your next band!</title>
-    <link rel="stylesheet" href="assets/styles.css">
   </head>
 
   <body>
-    <h1>Welcome to Herrdit.com</h1>
-    <div id='songs'>
+    <div class="jumbotron text-center">
+      <h1>Herrdit.com</h1>
+    </div>
+    <div id='songs' class="container-fluid">
       <form id='addSong' action="#">
-        <div>
-          <span>Song Title: </span><input type='text' id='title' placeholder="Song Title" />
-          <span>Artist: </span><input type='text' id='artist' placeholder="Artist" />
-          <span>Genre: </span><input type='text' id='genre' placeholder="Genre" />
-          <span>SoundCloud URL: </span><input type='url' id='url'placeholder="SoundCloud URL" />
-          <button id='submitSong'>Add Song</button>
+        <div class='row'>
+          <div class='col-sm-3'>
+            <span>Song Title: </span><input type='text' id='title' placeholder="Song Title" />
+          </div>
+          <div class='col-sm-2'>
+            <span>Artist: </span><input type='text' id='artist' placeholder="Artist" />
+          </div>
+          <div class='col-sm-2'>
+            <span>Genre: </span><input type='text' id='genre' placeholder="Genre" />
+          </div>
+          <div class='col-sm-3'>
+            <span>SoundCloud URL: </span><input type='url' id='url'placeholder="SoundCloud URL" />
+          </div>
+          <div class='col-sm-2'>
+            <button id='submitSong'>Add Song</button>
         </div>
       </form>
     </div>
     <div id='player'>
     </div>
-    <div id='search'>
+    <div id='search' class='row'>
       <form id='searchSongs'>
         <span>Search Songs: <input type='text' id='searchField' placeholder="Seach SoundCloud"></input><button id='submitSearch'>Search</button></span>
       </form>
@@ -31,12 +41,34 @@
     </div>
 
     <script type='text/template' id='songs-template'>
-      <span class='song'><span class='vote'>Upvotes: <%= upvotes %>  </span><span class='songTitle'><%= title %>  </span><button class='songURL'
-       href= "<%= url %>">Play Song</button> <button id='upvote'>UpVote</button></span>
+      <div class='row'>
+        <span class='song'>
+          <div class='col-sm-4'>
+            <span class='vote'>Upvotes: <%= upvotes %></span>
+          </div>
+          <div class='col-sm-4'>
+            <span class='songTitle'><%= title %></span>
+          </div>
+          <div class='col-sm-4'>
+            <button class='songURL' href= "<%= url %>">Play Song</button> <button id='upvote'>UpVote</button>
+          </div>
+        </span>
+       </div>
     </script>
 
     <script type='text/template' id='search-template'>
-      <span class="result"><img class="artwork" src="<%= data.artwork_url %>"/><span class="searchTitle"><%= data.title %></span><span class="searchUser"><%= data.user.username %></span><button id='addResult'> Add Song </button></span>
+      <div class='row'>
+        <span class="result">
+          <div class='col-sm-4'>
+            <img class="artwork" src="<%= data.artwork_url %>"/>
+          </div>
+          <div class='col-sm-4'>
+            <span class="searchTitle"><%= data.title %></span>
+          </div>
+          <div class='col-sm-4'>
+            <button id='addResult'> Add Song </button>
+          </div>
+        </span>
     </script>
 
     <script src="https://connect.soundcloud.com/sdk/sdk-3.1.2.js"></script>
@@ -55,6 +87,7 @@
     <script src="views/list.js"></script>
     <script src="views/searchlist.js"></script>
     <script src="client.js"></script>
+    <link rel="stylesheet" href="assets/styles.css">
   </body>
 
 </html>

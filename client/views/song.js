@@ -2,7 +2,7 @@ var app = app || {};
 
 app.SongView = Backbone.View.extend({
   tagName: 'div',
-  className: 'songContainer',
+  className: 'songContainer container-fluid',
   template: _.template( $( '#songs-template' ).html() ),
 
   events: {
