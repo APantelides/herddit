@@ -1,5 +1,6 @@
 var app = app || {};
 
 app.SearchResults = Backbone.Collection.extend({
-  model: app.SearchResult
+  model: app.SearchResult,
+  url: '/data'
 });

@@ -1,5 +1,4 @@
 var app = app || {};
-
 app.ListView = Backbone.View.extend({
   el: '#songs',
 
@@ -14,6 +13,7 @@ app.ListView = Backbone.View.extend({
     this.listenTo( this.collection, 'add', this.renderSong );
     this.listenTo( this.collection, 'fetch', this.render);
     this.listenTo( this.collection, 'change', this.sort);
+    this.listenTo(app.ResultView.collection, 'change', this.render );
   },
 
   render: function () {

@@ -8,7 +8,6 @@ app.ResultView = Backbone.View.extend({
   events: {
     'click #addResult': 'addResult'
   },
-
   render: function () {
     this.$el.html( this.template( this.model.attributes ) );
 
@@ -16,6 +15,8 @@ app.ResultView = Backbone.View.extend({
   },
 
   addResult: function () {
-    console.log('Clicked add result!');
-  }
+    this.model.save();
+    location.reload();
+  },
+  
 });

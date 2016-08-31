@@ -13,7 +13,6 @@ $(function () {
     var url = $(this).attr('href');
     var player = $('#player');
     SC.oEmbed(url, {maxheight: 200, auto_play: true}).then(function(res) {
-      console.log(res);
       $('#player').html(res.html);
     });
   });
